@@ -1,9 +1,10 @@
-Rails Developer Foundation
+Ruby Refactor Sample Code
+
 ===
 
 ## 系統需求
 
-* Ruby 3.1.3
+* Ruby 2.7.7
 * PostgreSQL 14+
 * Node.js 16+
 
@@ -37,10 +38,10 @@ brew install rvm
 
 ```bash
 # 選用 rbenv
-rbenv install 3.1.3
+rbenv install 2.7.7
 
 # 選用 rvm
-rvm install 3.1.3
+rvm install 2.7.7
 ```
 
 完成後需要先將 Bundler 安裝到新安裝的 Ruby 環境中（rvm 可能會先預裝完畢）
@@ -84,7 +85,7 @@ brew install yarn
 
 ```bash
 # 切換到專案目錄
-cd developer_foundation
+cd refacor_ruby
 
 # 安裝 Rails 所需套件
 bundle install
