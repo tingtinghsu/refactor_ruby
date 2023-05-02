@@ -24,5 +24,8 @@ Metrics/BlockLength:
     - lib/tasks/**/*
     - spec/**/*
     - features/**/*
+    - app/**/*
 Style/Documentation:
   Enabled: false
+Metrics/MethodLength:
+  Max: 1000
