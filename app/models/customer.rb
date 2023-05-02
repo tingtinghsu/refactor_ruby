@@ -76,21 +76,6 @@ class Customer
   end
 
   def amount_for(rental)
-    # determine amounts for each line
-    result = 0
-    case rental.movie.price_code
-      # when Movie::REGULAR
-    when 0
-      result += 2
-      result += (rental.days_rented - 2) * 1.5 if rental.days_rented > 2
-      # when Movie::NEW_RELEASE
-    when 1
-      result += rental.days_rented * 3
-      # when Movie::CHILDRENS
-    when 2
-      result += 1.5
-      result += (rental.days_rented - 3) * 1.5 if rental.days_rented > 3
-    end
-    result
+    rental.charge
   end
 end
