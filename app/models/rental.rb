@@ -31,4 +31,10 @@ class Rental
     end
     result
   end
+
+  def frequent_renter_points
+    # add bonus for a two day new release rental
+    # movie.price_code == (Movie.NEW_RELEASE && days_rented > 1) ? 2 : 1
+    movie.price_code == (1 && days_rented > 1) ? 2 : 1
+  end
 end
