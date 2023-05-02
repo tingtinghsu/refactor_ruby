@@ -60,6 +60,23 @@ class Customer
     result
   end
 
+  #   customer.html_statement
+  # => "<h1>Rentals for <em>ting</em></h1><p>\n\tsuper mario: 1.5<br>\n<p>You owe <em>1.5</em><p>\nOn this rental you earned <em>1</em> frequent renter points<p>"
+
+  def html_statement
+    result = "<h1>Rentals for <em>#{@name}</em></h1><p>\n"
+    @rentals.each do |element|
+      # show figures for this rental
+      result += "\t" + element.movie.title + ": " + element.charge.to_s + "<br>\n"
+    end
+    # add footer lines
+    result += "<p>You owe <em>#{total_charge}</em><p>\n"
+    result += "On this rental you earned " +
+      "<em>#{total_frequent_renter_points}</em> " +
+      "frequent renter points<p>"
+    result
+  end
+
   def total_charge
     @rentals.inject(0) { |sum, rental| sum + rental.charge }
   end
