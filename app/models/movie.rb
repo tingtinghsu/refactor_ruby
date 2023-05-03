@@ -28,18 +28,13 @@ class Movie
   # => #<Movie:0x00000001145d0cb8 @price_code=2,#  @title="super mario">
 
   def charge(days_rented)
-    # determine amounts for each line
     result = 0
     case price_code
-      # when Movie::REGULAR
-    when 0
-      result += 2
-      result += (days_rented - 2) * 1.5 if days_rented > 2
-      # when Movie::NEW_RELEASE
-    when 1
+    when REGULAR
+      return @price.charge(days_rented)
+    when NEW_RELEASE
       result += days_rented * 3
-      # when Movie::CHILDRENS
-    when 2
+    when CHILDRENS
       result += 1.5
       result += (days_rented - 3) * 1.5 if days_rented > 3
     end
